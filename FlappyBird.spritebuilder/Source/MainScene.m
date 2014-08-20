@@ -247,6 +247,8 @@
     }
     */
     
+    _parallaxBackground.position = ccp(_parallaxBackground.position.x - (character.physicsBody.velocity.x * delta), _parallaxBackground.position.y);
+    
     for (CCNode *bush in _bushes) {
         // get the world position of the bush
         CGPoint bushWorldPosition = [_parallaxBackground convertToWorldSpace:bush.position];
