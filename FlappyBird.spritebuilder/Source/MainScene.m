@@ -254,7 +254,7 @@
         CGPoint bushWorldPosition = [_parallaxBackground convertToWorldSpace:bush.position];
         // get the screen position of the bush
         CGPoint bushScreenPosition = [self convertToNodeSpace:bushWorldPosition];
-        if (bushScreenPosition.x >= -bush.contentSize.width) {
+        if (bushScreenPosition.x <= -bush.contentSize.width) {
             for (CGPointObject *child in _parallaxBackground.parallaxArray) {
                 if (child.child == bush) {
                     child.offset = ccp(child.offset.x + 2 * bush.contentSize.width, child.offset.y);
@@ -269,7 +269,7 @@
         CGPoint cloudWorldPosition = [_parallaxBackground convertToWorldSpace:cloud.position];
         // get the screen position of the cloud
         CGPoint cloudScreenPosition = [self convertToNodeSpace:cloudWorldPosition];
-        if (cloudScreenPosition.x >= -cloud.contentSize.width) {
+        if (cloudScreenPosition.x <= -cloud.contentSize.width) {
             for (CGPointObject *child in _parallaxBackground.parallaxArray) {
                 if (child.child == cloud) {
                     child.offset = ccp(child.offset.x + 2 * cloud.contentSize.width, child.offset.y);
